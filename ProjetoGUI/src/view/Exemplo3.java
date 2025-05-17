@@ -37,7 +37,7 @@ public class Exemplo3 extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jBtnMensagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/java.gif"))); // NOI18N
         jBtnMensagem.setMnemonic('m');
@@ -52,26 +52,41 @@ public class Exemplo3 extends javax.swing.JFrame {
         jBtnTeimoso.setMnemonic('t');
         jBtnTeimoso.setText("Teimoso");
         jBtnTeimoso.setToolTipText("Botão Teimoso");
+        jBtnTeimoso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jBtnTeimosoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jBtnTeimosoMouseExited(evt);
+            }
+        });
+        jBtnTeimoso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnTeimosoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jBtnMensagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addContainerGap(233, Short.MAX_VALUE)
                 .addComponent(jBtnTeimoso)
                 .addGap(40, 40, 40))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jBtnMensagem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnMensagem)
-                    .addComponent(jBtnTeimoso))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addComponent(jBtnTeimoso)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addComponent(jBtnMensagem)
+                .addGap(20, 20, 20))
         );
 
         jMenu1.setText("Tela Principal");
@@ -105,6 +120,7 @@ public class Exemplo3 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
@@ -114,6 +130,18 @@ public class Exemplo3 extends javax.swing.JFrame {
     private void jBtnMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMensagemActionPerformed
         JOptionPane.showMessageDialog(null, "Botão Mensagem!!!");
     }//GEN-LAST:event_jBtnMensagemActionPerformed
+
+    private void jBtnTeimosoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnTeimosoActionPerformed
+        JOptionPane.showMessageDialog(null, "Botão Teimso!!!");
+    }//GEN-LAST:event_jBtnTeimosoActionPerformed
+
+    private void jBtnTeimosoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnTeimosoMouseEntered
+        jBtnTeimoso.setBounds(50,120, 100, 25);
+    }//GEN-LAST:event_jBtnTeimosoMouseEntered
+
+    private void jBtnTeimosoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnTeimosoMouseExited
+         jBtnTeimoso.setBounds(50,70, 100, 25);
+    }//GEN-LAST:event_jBtnTeimosoMouseExited
 
     /**
      * @param args the command line arguments
